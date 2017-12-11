@@ -1,0 +1,1 @@
+In Merge Sort initially we take the first array and pass a temporary array into the 
