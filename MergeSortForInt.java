@@ -27,6 +27,32 @@ public static void mergesort(int[] array, int[] temp,int leftStart, int rightEnd
 
 
 private static void mergeHalves(int[] array, int[] temp,int leftStart, int rightEnd) {
+	int leftEnd=(leftStart+rightEnd)/2;
+	//leftStart
+	int rightStart=leftEnd+1;
+	//rightEnd
+	int size=rightEnd-leftStart-1;
+	
+	
+	int left= leftStart;
+	int right=rightStart;
+	int index=leftStart;
+	
+	if(left<=leftEnd && right<=rightEnd) {
+		if(array[left]<array[right]) {
+			temp[index]=array[left];
+			left++;
+			index++;
+		}else {
+			temp[index]=array[right];
+			right++;
+			index++;
+		}
+	}
+	
+	System.arraycopy(array, left, temp, index, leftEnd-left+1);
+	System.arraycopy(array, right, temp, index, rightEnd-right+1);
+	System.arraycopy(temp, leftStart, array, leftStart	, size);
 	
 }
 
