@@ -1,8 +1,14 @@
 
 public class MergeSortForInt {
 public static void main(String[] args) {
-	
-	 
+  int [] a=new int[] {4,4,5,72,2,45,1,8};	
+  for(int i:a) {
+//		System.out.println(i);
+	}
+  mergesort(a);
+for(int i:a) {
+	System.out.println(i);
+}
 }
 
 
@@ -38,16 +44,16 @@ private static void mergeHalves(int[] array, int[] temp,int leftStart, int right
 	int right=rightStart;
 	int index=leftStart;
 	
-	if(left<=leftEnd && right<=rightEnd) {
-		if(array[left]<array[right]) {
+	while(left<=leftEnd && right<=rightEnd) {
+		if(array[left]<=array[right]) {
 			temp[index]=array[left];
 			left++;
-			index++;
 		}else {
 			temp[index]=array[right];
 			right++;
-			index++;
-		}
+			
+		}			index++;
+
 	}
 	
 	System.arraycopy(array, left, temp, index, leftEnd-left+1);
